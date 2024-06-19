@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Ortu;
 use App\Models\User;
+use App\Models\Laporan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrtuController extends Controller
 {
@@ -150,5 +152,12 @@ class OrtuController extends Controller
         }
 
         return back()->with('success', 'Data ortu berhasil dihapus!');
+    }
+
+    public function downloadPDF($id)
+    {
+        $laporan = Laporan::findOrFail($id);
+        $pdf = PDF::loadView('pages.ortu.laporan.pdf', compact('laporan'));
+        return $pdf->download('laporan_' . $laporan->id . '.pdf');
     }
 }

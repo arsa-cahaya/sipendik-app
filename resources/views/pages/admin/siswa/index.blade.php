@@ -29,6 +29,7 @@
                                         <th>No</th>
                                         <th>Nama Siswa</th>
                                         <th>NIS</th>
+                                        <th>Kebutuhan Khusus</th>
                                         <th>Kelas</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -39,6 +40,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->nama }}</td>
                                         <td>{{ $data->nis }}</td>
+                                        <td>{{ $data->kebutuhan_khusus }}</td>
                                         <td>{{ $data->kelas->nama_kelas }}</td>
                                         <td>
                                             <div class="d-flex">

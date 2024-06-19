@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4>List Laporan</h4>
+                            <h4>Laporan</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -21,7 +21,7 @@
                                             <th>Nilai Sikap</th>
                                             <th>Nilai Keterampilan</th>
                                             <th>Keterangan</th>    
-                                            {{-- <th>Aksi</th> --}}
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,11 +33,11 @@
                                                 <td>{{ $data->nilai_sikap }}</td>
                                                 <td>{{ $data->nilai_keterampilan }}</td>
                                                 <td>{{ $data->keterangan }}</td>
-                                                {{-- <td>
+                                                <td>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('ortu.laporan.download', $data->id) }}" class="btn btn-success btn-sm"><i class="nav-icon fas fa-download"></i> &nbsp; Download Laporan</a>
+                                                        <a href="{{ route('ortu.laporan.download', $data->id) }}" class="btn btn-success btn-sm"><i class="nav-icon fas fa-download"></i> &nbsp; Download</a>
                                                     </div>
-                                                </td> --}}
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

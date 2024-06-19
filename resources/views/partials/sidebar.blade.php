@@ -31,10 +31,8 @@
 
             @elseif (Auth::check() && Auth::user()->roles == 'ortu')
             <li class="{{ request()->routeIs('ortu.dashboard.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('ortu.dashboard') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
-            {{-- <li class="{{ request()->routeIs('laporan.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('ortu.laporan') }}"><i class="fas fa-file"></i> <span>Laporan</span></a></li> --}}
-            <li class="{{ request()->routeIs('laporan.*') ? 'active' : '' }}"><a class="nav-link" href="#"><i class="fas fa-file"></i> <span>Laporan</span></a></li>
-
-            {{-- <li class="{{ request()->routeIs('laporan.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('ortu.laporan') }}"><i class="fas fa-book"></i> <span>Materi</span></a></li> --}}
+            <li class="{{ request()->routeIs('laporan.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('ortu.laporan') }}"><i class="fas fa-file"></i> <span>Laporan</span></a></li>
+            {{-- <li class="{{ request()->routeIs('laporan.*') ? 'active' : '' }}"><a class="nav-link" href="#"><i class="fas fa-file"></i> <span>Laporan</span></a></li> --}}
 
             @endif
 

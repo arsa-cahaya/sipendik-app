@@ -51,8 +51,8 @@ Route::group(['middleware' => ['auth', 'checkRole:guru']], function () {
 });
 Route::group(['middleware' => ['auth', 'checkRole:ortu']], function () {
     Route::get('/ortu/dashboard', [HomeController::class, 'ortu'])->name('ortu.dashboard');
-    // Route::get('/ortu/laporan', [LaporanController::class, 'laporan'])->name('ortu.laporan');
-    // Route::get('/materi-download/{id}', [MateriController::class, 'download'])->name('siswa.materi.download');
+    Route::get('/ortu/laporan', [LaporanController::class, 'laporan'])->name('ortu.laporan');
+    Route::get('/ortu/laporan/download/{id}', [OrtuController::class, 'downloadPDF'])->name('ortu.laporan.download');
 });
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admin/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');

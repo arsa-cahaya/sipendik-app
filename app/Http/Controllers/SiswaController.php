@@ -45,11 +45,10 @@ class SiswaController extends Controller
             'nis' => 'required|unique:siswas',
             'kebutuhan_khusus' => 'required',
             'alamat' => 'required',
-            'kelas_id' => 'required|unique:siswas',
+            'kelas_id' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ], [
             'nis.unique' => 'NIS sudah terdaftar',
-            'kelas_id.unique' => 'Siswa sudah terdaftar di kelas ini',
         ]);
 
         if (isset($request->foto)) {

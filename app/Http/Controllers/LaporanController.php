@@ -108,12 +108,12 @@ class LaporanController extends Controller
         return back()->with('success', 'Laporan berhasil dihapus!');
     }
 
-    public function ortu()
+    public function laporan()
     {
-        $ortu = Ortu::where('ortu_id', Auth::user()->nis)->first();
-        $siswa = Siswa::orderBy('nama', 'asc')->get();
-        // $laporan = Laporan::where('siswa_id', $siswa->id)->get();
+        $ortu = Ortu::where('user_id', Auth::user()->id)->first();
+        $siswa = Siswa::where('id', $ortu->siswa_id)->first();
+        $laporan = Laporan::where('siswa_id', $siswa->id)->get();
 
-        return view('pages.ortu.laporan.index', compact('laporan', 'guru', 'kelas'));
+        return view('pages.ortu.laporan.index', compact('laporan', 'ortu', 'siswa'));
     }
 }
